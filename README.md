@@ -32,7 +32,7 @@ VS在编译的时候是默认UWP相关SDK在C:\Program Files (x86)\Windows Kits�
 <ItemGroup>
     <SDKReference Include="WindowsMobile, Version=10.0.18362.0"/>
 </ItemGroup>
-解决方案二：
+解决方案二：(亲测可用）
 
 把手动安装的WindowsMobile SDK从目录
 
@@ -41,6 +41,19 @@ C:\z\Extension SDKs\WindowsMobile
 拷贝到
 
 C:\Program Files (x86)\Windows Kits\10\Extension SDKs\
+
 Source: https://blog.csdn.net/shenyi0_0/article/details/105874219
+
+3.
+Hololens 未能使用“通用身份验证”连接到设备的问题 部署失败 解决方案
+连pin码输入框都不弹出
+VS部署的设置为Release和ARM64 设备
+也尝试过Release和ARM64 远程
+发现远程可以弹框 并部署
+
+对VS组件进行一一对比之后发现缺少 USB设备连接性 组件
+![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/4a1a26da-a2e7-4147-bf47-493451843c8e)
+
+  source:https://blog.csdn.net/weixin_44558405/article/details/115527190
 
  
