@@ -1,6 +1,8 @@
 # Hololens_dev_issue
 to list the problem and the solution in Hololens development
 
+official step: https://learn.microsoft.com/zh-cn/windows/mixed-reality/develop/advanced-concepts/using-visual-studio?tabs=hl2
+
 1. 在Visual Studio部署软件到Hololens时，没有发现“设备”按钮的问题
 
 在Unity将项目部署到Universal Windows Platform平台后，会成为一个sln文件，但是在VisualStudio打开文件后，没有发现“设备按钮，如图。
