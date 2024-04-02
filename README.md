@@ -65,4 +65,6 @@ VS部署的设置为Release和ARM64 设备
 
 ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/4a3a44a3-6961-4814-8893-0af737a47eb8)
 
+6. 在Unity发布好后，使用VS部署到真机时，真机中显示的是啥都没有
+
 
