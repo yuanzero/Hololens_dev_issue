@@ -11,4 +11,34 @@ to list the problem and the solution in Hololens development
  
 source:https://blog.csdn.net/Autumn_horse/article/details/115800329
 
-2.
+2. 报错信息“WindowsMobile  version 10.0.xxx.0”
+
+Bug原因：
+
+VS在编译的时候是默认UWP相关SDK在C:\Program Files (x86)\Windows Kits中的
+
+解决方案一：
+
+在解决方案资源管理器中找到  [项目]>引用>Windows Mobile（带黄色感叹号）
+
+直接右键删掉
+
+加回的方法：
+
+编辑工程文件,添加下面 ItemGroup。
+
+<ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.18362.0"/>
+</ItemGroup>
+解决方案二：
+
+把手动安装的WindowsMobile SDK从目录
+
+C:\z\Extension SDKs\WindowsMobile
+
+拷贝到
+
+C:\Program Files (x86)\Windows Kits\10\Extension SDKs\
+Source: https://blog.csdn.net/shenyi0_0/article/details/105874219
+
+ 
