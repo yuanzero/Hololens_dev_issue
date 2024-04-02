@@ -56,4 +56,6 @@ VS部署的设置为Release和ARM64 设备
 
   source:https://blog.csdn.net/weixin_44558405/article/details/115527190
 
- 
+ 4. 双面渲染问题，有的materialshader选用MRTK
+    ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/bed05fbf-c4a1-4cd1-b719-73cc705e7881)
+
