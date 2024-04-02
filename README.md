@@ -52,10 +52,17 @@ VS部署的设置为Release和ARM64 设备
 发现远程可以弹框 并部署
 
 对VS组件进行一一对比之后发现缺少 USB设备连接性 组件
+
 ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/4a1a26da-a2e7-4147-bf47-493451843c8e)
 
   source:https://blog.csdn.net/weixin_44558405/article/details/115527190
 
  4. 双面渲染问题，有的materialshader选用MRTK
+
     ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/bed05fbf-c4a1-4cd1-b719-73cc705e7881)
+
+5. 在Unity发布好后，使用VS部署到真机时，真机中显示的是一个平面框，而不是MR版本的解决办法
+
+![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/4a3a44a3-6961-4814-8893-0af737a47eb8)
+
 
