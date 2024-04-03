@@ -65,6 +65,12 @@ VS部署的设置为Release和ARM64 设备
 
 ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/4a3a44a3-6961-4814-8893-0af737a47eb8)
 
-6. 在Unity发布好后，使用VS部署到真机时，真机中显示的是啥都没有
+6. 在Unity发布好后，使用VS部署到真机时，真机中显示的是啥都没有,也没有“made with unity"
+   
+在官方GitHub的自带的sence进行增减，使用其自带的mrtk版本已经推荐的unity版本，不做任何修改
+但在mrtk2的源项目也跑不通，一样没有任何显示
+后来换成mrtk3，也是没有任何显示，但是多了个启动图标，以及四个一直显示的圆点
+最后解决方案，切换sence，终于发现一个能用的，成功部署
+基于这个成功的sence，把自己的asset复制粘贴进去
 
 
