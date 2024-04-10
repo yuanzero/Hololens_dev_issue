@@ -21,14 +21,13 @@ source:https://blog.csdn.net/Autumn_horse/article/details/115800329
 
 Cause: Visual Studio (VS) compiles with default UWP-related SDK located in "C:\Program Files (x86)\Windows Kits".
 Solution 1: In Solution Explorer, navigate to [Project] > References > Windows Mobile (with yellow exclamation mark) and delete it.
-Solution 2: Manually add the WindowsMobile SDK back by editing the project file and adding the following ItemGroup:
-
+Manually add the WindowsMobile SDK back by editing the project file and adding the following ItemGroup:
 
 <ItemGroup>
     <SDKReference Include="WindowsMobile, Version=10.0.18362.0"/>
 </ItemGroup>
      
-Alternatively, copy the manually installed WindowsMobile SDK from the directory "C:\z\Extension SDKs\WindowsMobile" to "C:\Program Files (x86)\Windows Kits\10\Extension SDKs". 
+Solution 2:  copy the manually installed WindowsMobile SDK from the directory "C:\z\Extension SDKs\WindowsMobile" to "C:\Program Files (x86)\Windows Kits\10\Extension SDKs". 
 
 Source: https://blog.csdn.net/shenyi0_0/article/details/105874219
 
