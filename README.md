@@ -21,14 +21,16 @@
 
 原因：Visual Studio（VS）使用位于“C:\Program Files (x86)\Windows Kits”中的默认UWP相关SDK进行编译。
 解决方案1：在Solution Explorer中，导航到[Project] > References > Windows Mobile（带有黄色感叹号），然后将其删除。
-解决方案2：通过编辑项目文件并添加以下ItemGroup，手动将WindowsMobile SDK添加回来：
+通过编辑项目文件并添加以下ItemGroup，手动将WindowsMobile SDK添加回来：
 
 ```xml
 <ItemGroup>
     <SDKReference Include="WindowsMobile, Version=10.0.18362.0"/>
 </ItemGroup>
 ```
-或者，从目录“C:\z\Extension SDKs\WindowsMobile”手动复制安装的WindowsMobile SDK到“C:\Program Files (x86)\Windows Kits\10\Extension SDKs”中。
+
+
+解决方案2：从目录“C:\z\Extension SDKs\WindowsMobile”手动复制安装的WindowsMobile SDK到“C:\Program Files (x86)\Windows Kits\10\Extension SDKs”中。
 
 来源：https://blog.csdn.net/shenyi0_0/article/details/105874219
 
