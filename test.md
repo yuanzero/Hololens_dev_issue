@@ -2,6 +2,8 @@
 
 This document outlines various issues encountered during Hololens development along with their respective solutions.
 
+official step: https://learn.microsoft.com/zh-cn/windows/mixed-reality/develop/advanced-concepts/using-visual-studio?tabs=hl2
+
 ### 1. Absence of "Device" Button in Visual Studio during Deployment
 
 **Problem:** Upon deploying software from Visual Studio to Hololens, the "Device" button is not found.
@@ -36,6 +38,9 @@ Source
 
 USB Device Connectivity
 
+
+![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/4a1a26da-a2e7-4147-bf47-493451843c8e)
+
 Source
 
 ### 4. Dual-sided Rendering Issue with Material Shader Selection
@@ -43,10 +48,14 @@ Source
 
 Dual-sided Rendering
 
+![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/bed05fbf-c4a1-4cd1-b719-73cc705e7881)
+
 ### 5. Display of Plane Frame Instead of MR Version on Hololens Device
 **Problem:**: After deploying from Unity to a real device using Visual Studio, the device displays a plane frame instead of the MR version.
 
-Plane Frame Display
+Select initial with OpenXR in player setting.
+
+![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/4a3a44a3-6961-4814-8893-0af737a47eb8)
 
 ### 6. Absence of Display and "Made with Unity" Message on Hololens Device
 **Problem:**: After deploying from Unity to a real device using Visual Studio, there is no display and no "Made with Unity" message.
