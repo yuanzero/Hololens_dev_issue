@@ -1,0 +1,54 @@
+Hololens Development Issues and Solutions
+This document outlines various issues encountered during Hololens development along with their respective solutions.
+
+1. Absence of "Device" Button in Visual Studio during Deployment
+Problem: Upon deploying software from Visual Studio to Hololens, the "Device" button is not found.
+
+Solution: After deploying the project from Unity to Universal Windows Platform (UWP), it becomes an .sln file. However, upon opening the file in Visual Studio, the "Device" button may not be visible. In such cases, navigate to the "Solution Explorer" on the right side of Visual Studio, right-click on "YourProjectName", and select "Set as Startup Project", as illustrated below:
+
+Device Button
+
+Source
+
+2. Error Message "WindowsMobile version 10.0.xxx.0"
+Problem: Error message indicates an issue with "WindowsMobile version 10.0.xxx.0".
+
+Solution:
+
+Cause: Visual Studio (VS) compiles with default UWP-related SDK located in "C:\Program Files (x86)\Windows Kits".
+Solution 1: In Solution Explorer, navigate to [Project] > References > Windows Mobile (with yellow exclamation mark) and delete it.
+Solution 2: Manually add the WindowsMobile SDK back by editing the project file and adding the following ItemGroup:
+xml
+Copy code
+<ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.18362.0"/>
+</ItemGroup>
+Alternatively, copy the manually installed WindowsMobile SDK from directory "C:\z\Extension SDKs\WindowsMobile" to "C:\Program Files (x86)\Windows Kits\10\Extension SDKs".
+
+Source
+
+3. Failure to Connect Hololens Using "Universal Authentication" with Deployment
+Problem: Hololens fails to connect using "Universal Authentication", deployment fails, and the PIN input box does not appear.
+
+Solution: Upon comparing VS components, it's discovered that the USB Device Connectivity component is missing.
+
+USB Device Connectivity
+
+Source
+
+4. Dual-sided Rendering Issue with Material Shader Selection
+Problem: Some material shaders select MRTK, causing dual-sided rendering issues.
+
+Dual-sided Rendering
+
+5. Display of Plane Frame Instead of MR Version on Hololens Device
+Problem: After deploying from Unity to a real device using Visual Studio, the device displays a plane frame instead of the MR version.
+
+Plane Frame Display
+
+6. Absence of Display and "Made with Unity" Message on Hololens Device
+Problem: After deploying from Unity to a real device using Visual Studio, there is no display and no "Made with Unity" message.
+
+Solution: Try switching scenes within the Unity project. Experiment with different scenes until one successfully deploys. Once a functional scene is identified, integrate assets from the original project into this scene.
+
+These solutions should help address various issues encountered during Hololens development, ensuring smoother progress in development endeavors.
