@@ -62,11 +62,11 @@ USB设备连接
 在项目设置的XR插件管理中选择启动时的初始XR。
 ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/e92d2798-a796-42f3-a93d-f8aa584223dd)
 
-### 6. 在Hololens设备上缺少显示和“Made with Unity”消息
+### 6. 在Hololens设备上缺少显示和“Made with Unity”消息,视野一片空白，但是手部射线能显示。
 
 **问题：** 从Unity使用Visual Studio部署到真实设备后，没有显示和没有“Made with Unity”消息。
 
-**解决方案：** 尝试在Unity项目中切换场景。尝试不同的场景，直到成功部署一个为止。一旦识别出一个功能性场景，请将原始项目的资产集成到此场景中。
+**解决方案：** 尝试在Unity项目中切换场景。尝试不同的场景，直到成功部署一个为止。一旦识别出一个功能性场景，请将原始项目的asset集成到此场景中。
 
 然而，即使是MRTK2的源项目也没有起作用，仍然没有显示。后来，切换到MRTK3后仍然没有显示，但是额外的启动图标和四个不断显示的点出现了。最后，解决方案是切换场景，最终找到了一个可用的场景并成功部署。基于这个成功的场景，将您的资产复制粘贴到其中。最终部署设置在VS2019 Studio中以ARM发布。
 ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/81d4350f-cf75-4927-b134-f768f5fc355c)
