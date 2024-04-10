@@ -1,76 +1,82 @@
-# Hololens_dev_issue
-to list the problem and the solution in Hololens development
+## Hololens开发问题及解决方案
 
-official step: https://learn.microsoft.com/zh-cn/windows/mixed-reality/develop/advanced-concepts/using-visual-studio?tabs=hl2
+本文档概述了Hololens开发中遇到的各种问题以及它们各自的解决方案。
 
-1. 在Visual Studio部署软件到Hololens时，没有发现“设备”按钮的问题
+官方步骤：https://learn.microsoft.com/zh-cn/windows/mixed-reality/develop/advanced-concepts/using-visual-studio?tabs=hl2
 
-在Unity将项目部署到Universal Windows Platform平台后，会成为一个sln文件，但是在VisualStudio打开文件后，没有发现“设备按钮，如图。
+### 1. 在Visual Studio中部署时缺少“Device”按钮
 
-这时只要在VS中右侧的“解决方案资源管理器”中，右侧点击“YourProjectName”，并选择”设为启动项目即可，如图。
+**问题：** 在从Visual Studio部署软件到Hololens时，找不到“Device”按钮。
 
- ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/0531de47-9402-433e-a74d-43d1d4fce86d)
- 
-source:https://blog.csdn.net/Autumn_horse/article/details/115800329
+**解决方案：** 从Unity部署项目到通用Windows平台（UWP）后，它变成了一个 .sln 文件。但是，在Visual Studio中打开文件时，“Device”按钮可能不可见。在这种情况下，可以在Visual Studio右侧的“Solution Explorer”中导航到“YourProjectName”，右键单击它，然后选择“Set as Startup Project”，如下图所示：
 
-2. 报错信息“WindowsMobile  version 10.0.xxx.0”
+![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/0531de47-9402-433e-a74d-43d1d4fce86d)
 
-Bug原因：
+来源：https://blog.csdn.net/Autumn_horse/article/details/115800329
 
-VS在编译的时候是默认UWP相关SDK在C:\Program Files (x86)\Windows Kits中的
+### 2. 错误消息“WindowsMobile version 10.0.xxx.0”
+**问题：** 错误消息指示与“WindowsMobile version 10.0.xxx.0”相关的问题。
 
-解决方案一：
+**解决方案：** 
 
-在解决方案资源管理器中找到  [项目]>引用>Windows Mobile（带黄色感叹号）
+原因：Visual Studio（VS）使用位于“C:\Program Files (x86)\Windows Kits”中的默认UWP相关SDK进行编译。
+解决方案1：在Solution Explorer中，导航到[Project] > References > Windows Mobile（带有黄色感叹号），然后将其删除。
+解决方案2：通过编辑项目文件并添加以下ItemGroup，手动将WindowsMobile SDK添加回来：
 
-直接右键删掉
-
-加回的方法：
-
-编辑工程文件,添加下面 ItemGroup。
-
+```xml
 <ItemGroup>
     <SDKReference Include="WindowsMobile, Version=10.0.18362.0"/>
 </ItemGroup>
-解决方案二：(亲测可用）
+```
+或者，从目录“C:\z\Extension SDKs\WindowsMobile”手动复制安装的WindowsMobile SDK到“C:\Program Files (x86)\Windows Kits\10\Extension SDKs”中。
 
-把手动安装的WindowsMobile SDK从目录
+来源：https://blog.csdn.net/shenyi0_0/article/details/105874219
 
-C:\z\Extension SDKs\WindowsMobile
+### 3. 使用“通用身份验证”连接Hololens时失败
 
-拷贝到
+**问题：** 使用“通用身份验证”连接Hololens失败，部署失败，PIN输入框不显示。
 
-C:\Program Files (x86)\Windows Kits\10\Extension SDKs\
+**解决方案：** 在比较VS组件时发现缺少USB设备连接组件。
 
-Source: https://blog.csdn.net/shenyi0_0/article/details/105874219
-
-3.
-Hololens 未能使用“通用身份验证”连接到设备的问题 部署失败 解决方案
-连pin码输入框都不弹出
-VS部署的设置为Release和ARM64 设备
-也尝试过Release和ARM64 远程
-发现远程可以弹框 并部署
-
-对VS组件进行一一对比之后发现缺少 USB设备连接性 组件
+USB设备连接
 
 ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/4a1a26da-a2e7-4147-bf47-493451843c8e)
 
-  source:https://blog.csdn.net/weixin_44558405/article/details/115527190
+### 4. 材质着色器选择时的双面渲染问题
 
- 4. 双面渲染问题，有的materialshader选用MRTK
+**问题：** 一些材质着色器选择MRTK，导致双面渲染问题。
 
-    ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/bed05fbf-c4a1-4cd1-b719-73cc705e7881)
+双面渲染，选择**关闭**作为**Dull Mode**
 
-5. 在Unity发布好后，使用VS部署到真机时，真机中显示的是一个平面框，而不是MR版本的解决办法
+![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/f2429aa7-40ed-40f3-ba91-0831f75dc4d0)
+![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/eff043c8-064a-444e-8735-bd49a52c81ad)
 
-![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/4a3a44a3-6961-4814-8893-0af737a47eb8)
+注意到有些材料没有此选项，可能需要更改材料。
 
-6. 在Unity发布好后，使用VS部署到真机时，真机中显示的是啥都没有,也没有“made with unity"
-   
-在官方GitHub的自带的sence进行增减，使用其自带的mrtk版本已经推荐的unity版本，不做任何修改
-但在mrtk2的源项目也跑不通，一样没有任何显示
-后来换成mrtk3，也是没有任何显示，但是多了个启动图标，以及四个一直显示的圆点
-最后解决方案，切换sence，终于发现一个能用的，成功部署
-基于这个成功的sence，把自己的asset复制粘贴进去
+### 5. 在Hololens设备上显示平面框架而不是MR版本
 
+**问题：** 从Unity使用Visual Studio部署到真实设备后，设备显示平面框架而不是MR版本。
 
+在项目设置的XR插件管理中选择启动时的初始XR。
+![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/e92d2798-a796-42f3-a93d-f8aa584223dd)
+
+### 6. 在Hololens设备上缺少显示和“Made with Unity”消息
+
+**问题：** 从Unity使用Visual Studio部署到真实设备后，没有显示和没有“Made with Unity”消息。
+
+**解决方案：** 尝试在Unity项目中切换场景。尝试不同的场景，直到成功部署一个为止。一旦识别出一个功能性场景，请将原始项目的资产集成到此场景中。
+
+然而，即使是MRTK2的源项目也没有起作用，仍然没有显示。后来，切换到MRTK3后仍然没有显示，但是额外的启动图标和四个不断显示的点出现了。最后，解决方案是切换场景，最终找到了一个可用的场景并成功部署。基于这个成功的场景，将您的资产复制粘贴到其中。最终部署设置在VS2019 Studio中以ARM发布。
+![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/81d4350f-cf75-4927-b134-f768f5fc355c)
+
+![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/f08a8033-e448-49fb-a714-fe7e8d5aab65)
+
+并选择'Run Without Debugging'
+
+![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/501287d4-dd59-469c-9c2d-72902eded02a)
+
+在第一次部署时，它会要求您输入PIN，您可以在HoloLens中找到它。
+
+这些解决方案应该有助于解决Hololens开发中遇到的各种问题，确保开发工作的顺利进行。
+
+如果您遇到其他问题，请随时在本页面分享。如果你觉得有用，帮忙点一下星星。
