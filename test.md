@@ -22,14 +22,15 @@ source:https://blog.csdn.net/Autumn_horse/article/details/115800329
 Cause: Visual Studio (VS) compiles with default UWP-related SDK located in "C:\Program Files (x86)\Windows Kits".
 Solution 1: In Solution Explorer, navigate to [Project] > References > Windows Mobile (with yellow exclamation mark) and delete it.
 Solution 2: Manually add the WindowsMobile SDK back by editing the project file and adding the following ItemGroup:
-xml
-Copy code
+
+
 <ItemGroup>
     <SDKReference Include="WindowsMobile, Version=10.0.18362.0"/>
 </ItemGroup>
-Alternatively, copy the manually installed WindowsMobile SDK from directory "C:\z\Extension SDKs\WindowsMobile" to "C:\Program Files (x86)\Windows Kits\10\Extension SDKs".
+     
+Alternatively, copy the manually installed WindowsMobile SDK from the directory "C:\z\Extension SDKs\WindowsMobile" to "C:\Program Files (x86)\Windows Kits\10\Extension SDKs". 
 
-Source
+Source: https://blog.csdn.net/shenyi0_0/article/details/105874219
 
 ### 3. Failure to Connect Hololens Using "Universal Authentication" with Deployment
 **Problem:**: Hololens fails to connect using "Universal Authentication", deployment fails, and the PIN input box does not appear.
@@ -40,8 +41,6 @@ USB Device Connectivity
 
 
 ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/4a1a26da-a2e7-4147-bf47-493451843c8e)
-
-Source
 
 ### 4. Dual-sided Rendering Issue with Material Shader Selection
 **Problem:**: Some material shaders select MRTK, causing dual-sided rendering issues.
@@ -71,9 +70,12 @@ However, even the source project of MRTK2 did not work, and there was still no d
 
 ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/f08a8033-e448-49fb-a714-fe7e8d5aab65)
 
-and select 
+and select 'Run Without Debugging'
+
 ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/501287d4-dd59-469c-9c2d-72902eded02a)
 
 on your first deployment, it will ask you to input the PIN, which you can find in HoloLens.
 
-These solutions should help address various issues encountered during Hololens development, ensuring smoother progress in development endeavors.
+These solutions should help address various issues encountered during Hololens development, ensuring smoother progress in development endeavors. 
+
+If you encounter any other issues, feel free to share them on this page.
