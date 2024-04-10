@@ -1,10 +1,12 @@
-Hololens Development Issues and Solutions
+## Hololens Development Issues and Solutions
+
 This document outlines various issues encountered during Hololens development along with their respective solutions.
 
-1. Absence of "Device" Button in Visual Studio during Deployment
-Problem: Upon deploying software from Visual Studio to Hololens, the "Device" button is not found.
+### 1. Absence of "Device" Button in Visual Studio during Deployment
 
-Solution: After deploying the project from Unity to Universal Windows Platform (UWP), it becomes an .sln file. However, upon opening the file in Visual Studio, the "Device" button may not be visible. In such cases, navigate to the "Solution Explorer" on the right side of Visual Studio, right-click on "YourProjectName", and select "Set as Startup Project", as illustrated below:
+**Problem:** Upon deploying software from Visual Studio to Hololens, the "Device" button is not found.
+
+**Solution:** After deploying the project from Unity to Universal Windows Platform (UWP), it becomes an .sln file. However, upon opening the file in Visual Studio, the "Device" button may not be visible. In such cases, navigate to the "Solution Explorer" on the right side of Visual Studio, right-click on "YourProjectName", and select "Set as Startup Project", as illustrated below:
 
 Device Button
 
