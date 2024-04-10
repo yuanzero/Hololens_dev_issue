@@ -79,3 +79,7 @@ on your first deployment, it will ask you to input the PIN, which you can find i
 These solutions should help address various issues encountered during Hololens development, ensuring smoother progress in development endeavors. 
 
 If you encounter any other issues, feel free to share them on this page.
+
+If you think it is helpful, light the star.
+
+
