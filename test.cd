@@ -54,3 +54,4 @@ Plane Frame Display
 **Solution:**  Try switching scenes within the Unity project. Experiment with different scenes until one successfully deploys. Once a functional scene is identified, integrate assets from the original project into this scene.
 
 These solutions should help address various issues encountered during Hololens development, ensuring smoother progress in development endeavors.
+However, even the source project of MRTK2 did not work, and there was still no display. Later, after switching to MRTK3, there was still no display, but an additional startup icon and four constantly displayed dots were present. Finally, the solution was to switch scenes, and finally, a usable one was found and successfully deployed. Based on this successful scene, copy and paste your assets into it.
