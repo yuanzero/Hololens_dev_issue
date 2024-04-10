@@ -8,9 +8,9 @@ This document outlines various issues encountered during Hololens development al
 
 **Solution:** After deploying the project from Unity to Universal Windows Platform (UWP), it becomes a .sln file. However, upon opening the file in Visual Studio, the "Device" button may not be visible. In such cases, navigate to the "Solution Explorer" on the right side of Visual Studio, right-click on "YourProjectName", and select "Set as Startup Project", as illustrated below:
 
-Device Button
-
-Source
+ ![image](https://github.com/yuanzero/Hololens_dev_issue/assets/26519097/0531de47-9402-433e-a74d-43d1d4fce86d)
+ 
+source:https://blog.csdn.net/Autumn_horse/article/details/115800329
 
 ### 2. Error Message "WindowsMobile version 10.0.xxx.0"
 **Problem:**: Error message indicates an issue with "WindowsMobile version 10.0.xxx.0".
