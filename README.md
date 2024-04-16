@@ -80,13 +80,11 @@ USB设备连接
 在第一次部署时，它会要求您输入PIN，您可以在HoloLens中找到它。
 
 
-### Exception: Unity.IL2CPP.Building.BuilderFailedException: Build failed with 0 successful nodes and 0 failed ones Error: Internal build system error. Backend exited with code 2. tundra: error: Failed to open file:
+### 7. 当你把一个项目直接拷贝到另一个位置时，ll2cpp报错 Exception: Unity.IL2CPP.Building.BuilderFailedException: Build failed with 0 successful nodes and 0 failed ones Error: Internal build system error. Backend exited with code 2. tundra: error: Failed to open file:这里会显示原来的路径。
 
 **解决方案：** 
-
+ 我试了很久都没找到原来路径的修改方法，后来直接删除 Library 下的 Il2cppBuildCache 文件夹。
 Remove Il2cppBuildCache folder under Library.
-
-删除 Library 下的 Il2cppBuildCache 文件夹。
 
 Reference：https://issuetracker.unity3d.com/issues/build-fails-with-exception-unity-dot-il2cpp-dot-building-dot-builderfailedexception-build-failed-with-0-successful-nodes-and-0-failed-ones-when-building-the-project-for-ios
 
