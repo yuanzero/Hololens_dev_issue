@@ -79,6 +79,17 @@ USB设备连接
 
 在第一次部署时，它会要求您输入PIN，您可以在HoloLens中找到它。
 
+
+### Exception: Unity.IL2CPP.Building.BuilderFailedException: Build failed with 0 successful nodes and 0 failed ones Error: Internal build system error. Backend exited with code 2. tundra: error: Failed to open file:
+
+**解决方案：** 
+
+Remove Il2cppBuildCache folder under Library.
+
+删除 Library 下的 Il2cppBuildCache 文件夹。
+
+Reference：https://issuetracker.unity3d.com/issues/build-fails-with-exception-unity-dot-il2cpp-dot-building-dot-builderfailedexception-build-failed-with-0-successful-nodes-and-0-failed-ones-when-building-the-project-for-ios
+
 这些解决方案应该有助于解决Hololens开发中遇到的各种问题，确保开发工作的顺利进行。
 
 如果您遇到其他问题，请随时在本页面分享。如果你觉得有用，帮忙点一下星星。
